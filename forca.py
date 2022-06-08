@@ -67,7 +67,7 @@ Selecione uma opção: ''' )
 
     if tentativa in letras_digitadas:
         print("Você já tentou essa letra!\n")
-        erros -= 1
+        erros = erros
         
     else:
          letras_digitadas += tentativa
