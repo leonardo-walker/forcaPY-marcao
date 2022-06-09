@@ -119,16 +119,20 @@ else:
     limpar_tela()
 
 print("A palavra chave era:",palavra_chave)
-registro = open("registro.txt","w")
+try:
+    registro = open("registro.txt","w")
 
-if key == palavra_chave:
-    registro.write("O(a) vencedor(a) foi %s" % nome_desafiado)
-else:
-    registro.write("O(a) vencedor(a) foi %s" % nome_desafiante)
-    
-registro = open("registro.txt","r")
-conteudo = registro.read()
-print(conteudo)
+    if key == palavra_chave:
+        registro.write("O(a) vencedor(a) foi %s" % nome_desafiado)
+    else:
+        registro.write("O(a) vencedor(a) foi %s" % nome_desafiante)
+    registro = open("registro.txt","r")
+    conteudo = registro.read()
+    print(conteudo)
+except:
+    registro = open("registro.txt","r")
+    conteudo = registro.read()
+    print(conteudo)
 
 input("\nPressione ENTER para continuar...")
 limpar_tela()
